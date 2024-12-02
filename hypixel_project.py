@@ -1,12 +1,14 @@
 import openai
 from openai import OpenAI
 import os
-client = OpenAI()
 
+os.environ["OPENAI_API_KEY"] = ""
+
+client = OpenAI()
+#final
 counter = 0
 conversation_history = []
 past_events_context = ""
-openai.api_key = os.getenv("OPENAI_API_KEY", "your_openai_api_key")
 
 def get_response_from_llm(context, player_input):
     # Combine context and player's input to create a prompt for the LLM
